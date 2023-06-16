@@ -25,7 +25,7 @@ const SingleProduct = () => {
     queryFn: () =>
       fetch(`${import.meta.env.VITE_APP_api}/category/${id}`, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       }).then((res) => res.json()),
   });

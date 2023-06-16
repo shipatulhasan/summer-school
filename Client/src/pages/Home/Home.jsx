@@ -18,7 +18,7 @@ const Home = () => {
     axios
       .get(`${import.meta.env.VITE_APP_api}/advertise`, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       })
       .then((data) => {
@@ -32,7 +32,7 @@ const Home = () => {
       <Helmet>
         <title>Home - Biker Point</title>
       </Helmet>
-      <div className="pb-5">
+      <div className="pb-5 bg-[#0C0C0C]">
         <Slider />
       </div>
       <div className="py-16 lg:py-20">

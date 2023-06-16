@@ -5,7 +5,7 @@ export const saveUser = async (user) => {
       method: "put",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+        authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
       },
       body: JSON.stringify(user),
     }

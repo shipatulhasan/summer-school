@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../contexts/AuthProvider";
 import toast from "react-hot-toast";
+import pageBg from "../../assets/banner/form_page.jpg";
 import LoderText from "../../components/Spinner/LoderText";
 
 const Login = () => {
@@ -32,7 +33,7 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data?.token) {
-              localStorage.setItem("biker-point-token", data.token);
+              localStorage.setItem("music-school-token", data.token);
               toast.success("Successfully logged in");
               setError("");
               navigate(from, { replace: true });
@@ -59,7 +60,7 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data?.token) {
-              localStorage.setItem("biker-point-token", data.token);
+              localStorage.setItem("music-school-token", data.token);
               toast.success("Successfully logged in");
               setError("");
               form.reset();
@@ -78,7 +79,10 @@ const Login = () => {
   };
 
   return (
-    <div className="h-full w-full py-5 px-4 bg-center bg-no-repeat bg-cover bg-white ">
+    <div
+      className="minH-['90vh'] h-full w-full py-5 px-4 bg-center bg-no-repeat bg-cover bg-[#0C0C0C] "
+      style={{ backgroundImage: `url(${pageBg})` }}
+    >
       <div className="flex flex-col items-center justify-center">
         <Link to="/">
           <img className="w-1/2 mx-auto" src={logo} alt="" />

@@ -17,7 +17,7 @@ const Payment = () => {
     queryFn: () =>
       fetch(`${import.meta.env.VITE_APP_api}/booking/${id}`, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       }).then((res) => res.json()),
   });

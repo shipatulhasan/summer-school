@@ -31,7 +31,7 @@ const BookingModal = ({ show, setShow, product }) => {
       method: "post",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+        authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
       },
       body: JSON.stringify(bookingInfo),
     })

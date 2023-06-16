@@ -10,7 +10,7 @@ export const useRole = (email) => {
     if (email) {
       fetch(`${import.meta.env.VITE_APP_api}/user/${email}`, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       })
         .then((res) => {

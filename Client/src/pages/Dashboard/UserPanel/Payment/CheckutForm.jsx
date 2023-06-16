@@ -20,7 +20,7 @@ const CheckoutForm = ({ booking }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+        authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
       },
       body: JSON.stringify({ price }),
     })
@@ -89,7 +89,7 @@ const CheckoutForm = ({ booking }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
         body: JSON.stringify(payment),
       })

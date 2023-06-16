@@ -16,7 +16,7 @@ const AllSellers = () => {
       fetch(`${import.meta.env.VITE_APP_api}/user/${seller?._id}`, {
         method: "delete",
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       })
         .then((res) => res.json())
@@ -38,7 +38,7 @@ const AllSellers = () => {
         method: "put",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
         body: JSON.stringify({ ...seller, verified: true }),
       })

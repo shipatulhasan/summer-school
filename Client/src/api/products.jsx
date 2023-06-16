@@ -3,7 +3,7 @@ export const setProductToDb = async (product) => {
     method: "post",
     headers: {
       "content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+      authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
     },
     body: JSON.stringify(product),
   });
@@ -18,7 +18,7 @@ export const setReportedProduct = async (product) => {
       method: "put",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+        authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
       },
       body: JSON.stringify(product),
     }

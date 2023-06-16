@@ -18,7 +18,7 @@ const ReportedProduct = () => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem(
-              "biker-point-token"
+              "music-school-token"
             )}`,
           },
         }
@@ -43,7 +43,7 @@ const ReportedProduct = () => {
           method: "delete",
           headers: {
             authorization: `Bearer ${localStorage.getItem(
-              "biker-point-token"
+              "music-school-token"
             )}`,
           },
         }

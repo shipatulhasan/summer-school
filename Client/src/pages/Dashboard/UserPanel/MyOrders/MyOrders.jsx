@@ -18,7 +18,7 @@ const MyOrders = () => {
     axios
       .get(`${import.meta.env.VITE_APP_api}/booking?email=${user?.email}`, {
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       })
       .then((data) => {
@@ -36,7 +36,7 @@ const MyOrders = () => {
       fetch(`${import.meta.env.VITE_APP_api}/booking/${booking?._id}`, {
         method: "delete",
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       })
         .then((res) => res.json())

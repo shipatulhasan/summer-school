@@ -4,10 +4,12 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { getImageUrl } from "../../api/imageUrl";
 
-import logo from "../../assets/brand/logo-png1.png";
-import { AuthContext } from "../../contexts/AuthProvider";
-import LoaderText from "../../components/Spinner/LoderText";
 import { saveUser } from "../../api/saveUser";
+import logo from "../../assets/brand/logo-png1.png";
+import LoaderText from "../../components/Spinner/LoderText";
+import { AuthContext } from "../../contexts/AuthProvider";
+
+import pageBg from "../../assets/banner/form_page.jpg";
 
 const Registration = () => {
   const [error, setError] = useState("");
@@ -20,7 +22,6 @@ const Registration = () => {
     isLoading,
     setIsLoading,
   } = useContext(AuthContext);
-  const [role, setRole] = useState("user");
 
   // use navigate
   let navigate = useNavigate();
@@ -33,7 +34,7 @@ const Registration = () => {
     const confirmPass = form.confirmPassword.value;
     const userName = form.userName.value;
     const image = form.img.files[0];
-    // console.log(email, role, pass, userName, image);
+    console.log(email, pass, userName, image);
 
     if (pass !== confirmPass) {
       setError("Both password should be matched");
@@ -50,7 +51,7 @@ const Registration = () => {
             const userData = {
               email,
               image: data,
-              role,
+              role: "student",
               name: userName,
             };
             saveUser(userData).then((data) => {
@@ -58,7 +59,7 @@ const Registration = () => {
                 .then((res) => res.json())
                 .then((data) => {
                   if (data?.token) {
-                    localStorage.setItem("biker-point-token", data.token);
+                    localStorage.setItem("music-school-token", data.token);
                     toast.success("Successfully registered");
                     setError("");
                     form.reset();
@@ -91,14 +92,14 @@ const Registration = () => {
           email: user?.email,
           image: user.photoURL,
           name: user.displayName,
-          role: "user",
+          role: "student",
         };
         saveUser(userData).then((data) => {
           fetch(`${import.meta.env.VITE_APP_api}/jwt?email=${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
               if (data?.token) {
-                localStorage.setItem("biker-point-token", data.token);
+                localStorage.setItem("music-school-token", data.token);
                 toast.success("Successfully registered");
                 setError("");
                 navigate("/");
@@ -128,7 +129,10 @@ const Registration = () => {
   };
 
   return (
-    <div className="h-full w-full py-6 px-4 bg-center bg-no-repeat bg-cover bg-white ">
+    <div
+      className="minH-['90vh'] h-full w-full py-5 px-4 bg-center bg-no-repeat bg-cover bg-[#0C0C0C] "
+      style={{ backgroundImage: `url(${pageBg})` }}
+    >
       <div className="flex flex-col items-center justify-center">
         <Link to="/">
           <img className="w-1/2 mx-auto" src={logo} alt="" />
@@ -229,7 +233,7 @@ const Registration = () => {
                 </label>
               </div>
               {/* role */}
-              <div className="mt-2 " onChange={(e) => setRole(e.target.value)}>
+              {/* <div className="mt-2 " onChange={(e) => setRole(e.target.value)}>
                 <h2 className="text-base font-medium leading-none text-gray-800">
                   Select role
                 </h2>
@@ -254,7 +258,7 @@ const Registration = () => {
                     Seller
                   </label>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="grid grid-cols-1 gap-6 mt-6 md:grid-cols-2">

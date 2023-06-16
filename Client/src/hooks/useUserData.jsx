@@ -14,7 +14,7 @@ export const useUserData = (role) => {
           {
             headers: {
               authorization: `Bearer ${localStorage.getItem(
-                "biker-point-token"
+                "music-school-token"
               )}`,
             },
           }

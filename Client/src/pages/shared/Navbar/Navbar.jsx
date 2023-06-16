@@ -4,28 +4,27 @@ import brand from "../../../assets/brand/logo-png1.png";
 import Loader from "../../../components/Spinner/Loader";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import UserProfile from "./UserProfile";
-import toast from 'react-hot-toast'
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const { user, isLoading,logOut } = useContext(AuthContext);
-  const handleLogOut = ()=>{
+  const { user, isLoading, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
     logOut()
-    .then(()=>{ 
-      toast.success('Successfully logout')
-    })
-    .catch(err=>console.error(err.message))
-  }
+      .then(() => {
+        toast.success("Successfully logout");
+      })
+      .catch((err) => console.error(err.message));
+  };
 
   const menuList = (
-
     <>
       <NavLink to="/Home">
         {({ isActive }) => (
           <li
             className={`${
-              isActive ? "text-red-600" : "text-black"
-            } hover:bg-red-300 hover:text-black px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
+              isActive ? "text-[#EFCF4F]" : "text-slate-100"
+            }  hover:text-[#EFCF4F] px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
           >
             Home
           </li>
@@ -35,55 +34,54 @@ const Navbar = () => {
         {({ isActive }) => (
           <li
             className={`${
-              isActive ? "text-red-600" : "text-black"
-            } hover:bg-red-300 hover:text-black px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
+              isActive ? "text-[#EFCF4F]" : "text-slate-100"
+            }  hover:text-[#EFCF4F] px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
           >
             Blog
           </li>
         )}
       </NavLink>
 
-      {!user ?  <NavLink to="/login">
+      {!user ? (
+        <NavLink to="/login">
           {({ isActive }) => (
             <li
-            className={`${
-              isActive ? "text-red-600" : "text-black"
-            } hover:bg-red-300 hover:text-black px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
+              className={`${
+                isActive ? "text-[#EFCF4F]" : "text-slate-100"
+              }  hover:text-[#EFCF4F] px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
             >
               Login
             </li>
           )}
-        </NavLink> 
-        :
+        </NavLink>
+      ) : (
         <>
           <NavLink to="/dashboard">
-          {({ isActive }) => (
+            {({ isActive }) => (
+              <li
+                className={`${
+                  isActive ? "text-[#EFCF4F]" : "text-slate-100"
+                }  hover:text-[#EFCF4F] px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
+              >
+                Dashboard
+              </li>
+            )}
+          </NavLink>
+          <NavLink onClick={handleLogOut}>
             <li
-            className={`${
-              isActive ? "text-red-600" : "text-black"
-            } hover:bg-red-300 hover:text-black px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
-            >
-              Dashboard
-            </li>
-          )}
-        </NavLink> 
-          <NavLink onClick={handleLogOut} >
-          
-            <li
-            className={` text-black
-            hover:bg-red-300 hover:text-black px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
+              className={` text-slate-100
+              hover:text-[#EFCF4F] px-2 rounded transition-colors duration-150 ease-linear font-bold list-none`}
             >
               Logout
             </li>
-     
-        </NavLink> 
+          </NavLink>
         </>
-         }
+      )}
     </>
   );
 
   return (
-    <nav className=" z-10 w-full  dark:bg-gray-800">
+    <nav className=" z-10 w-full  bg-[#0C0C0C]">
       <div className="container px-6 py-4 mx-auto rounded">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
@@ -154,7 +152,7 @@ const Navbar = () => {
             <div className="flex items-center mt-4 lg:mt-0">
               {user && (
                 <div className="flex items-center -ml-1 lg:ml-0">
-                  {isLoading ? <Loader height={'min-h-5'} />:<UserProfile />}
+                  {isLoading ? <Loader height={"min-h-5"} /> : <UserProfile />}
                   <h3 className="mx-2 text-white dark:text-gray-200 lg:hidden">
                     {user?.displayName}
                   </h3>

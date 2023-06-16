@@ -22,7 +22,7 @@ const ManageProducts = () => {
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem(
-              "biker-point-token"
+              "music-school-token"
             )}`,
           },
         }
@@ -40,7 +40,7 @@ const ManageProducts = () => {
       fetch(`${import.meta.env.VITE_APP_api}/product/${product?._id}`, {
         method: "delete",
         headers: {
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
       })
         .then((res) => res.json())
@@ -64,7 +64,7 @@ const ManageProducts = () => {
         method: "post",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("biker-point-token")}`,
+          authorization: `Bearer ${localStorage.getItem("music-school-token")}`,
         },
         body: JSON.stringify({ ...product, productId }),
       })
