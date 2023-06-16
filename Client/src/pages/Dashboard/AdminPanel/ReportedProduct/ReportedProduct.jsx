@@ -60,7 +60,7 @@ const ReportedProduct = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8 py-8">
       <Helmet>
-        <title>Reported Products - Biker Point</title>
+        <title>Reported Products - Music School</title>
       </Helmet>
 
       <div className="px-4  py-4 overflow-x-auto">

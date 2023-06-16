@@ -150,7 +150,7 @@ const Registration = () => {
               to="/login"
               role="link"
               aria-label="Sign up here"
-              className="text-base font-medium leading-none underline text-red-600 cursor-pointer"
+              className="text-base font-medium leading-none underline text-[#C25934] cursor-pointer"
             >
               {" "}
               Sign in here
@@ -158,7 +158,7 @@ const Registration = () => {
           </p>
           <div className="w-full flex items-center  gap-5 mt-5">
             <button
-              className="flex items-center gap-5 border-2 rounded border-red-500 px-2 py-1"
+              className="flex items-center gap-5 border-2 rounded border-[#EFCF4F] px-2 py-1"
               aria-label="Sign Up with google"
               onClick={handleSignUpWithGoogle}
             >
@@ -198,7 +198,7 @@ const Registration = () => {
             <hr className="w-full border-gray-800  " />
           </div>
           <form action="" onSubmit={handleSubmit}>
-            <p className="text-base font-medium mb-5 text-red-600">{error}</p>
+            <p className="text-base font-medium mb-5 text-[#C25934]">{error}</p>
             <div className="grid grid-cols-1 gap-6 mt-4 md:grid-cols-2">
               <label className="text-base font-medium leading-none text-gray-800">
                 Full Name
@@ -303,7 +303,7 @@ const Registration = () => {
             <div className="mt-8">
               <button
                 aria-label="create my account"
-                className="focus:ring-2 focus:ring-offset-2 focus:ring-slate-100 text-base font-semibold leading-none text-white focus:outline-none bg-red-500 border rounded hover:bg-red-600 py-4 w-full"
+                className="focus:ring-2 focus:ring-offset-2 focus:ring-slate-100 text-base font-semibold leading-none text-white focus:outline-none bg-[#EFCF4F] border rounded hover:bg-[#C25934] py-4 w-full"
                 type="submit"
               >
                 {isLoading ? <LoaderText /> : "Create new account"}

@@ -1,50 +1,47 @@
-import { format } from 'date-fns';
-import React, {useContext,useState,useEffect} from 'react';
-import { Helmet } from 'react-helmet-async';
-import {AuthContext} from '../../contexts/AuthProvider'
-
+import { format } from "date-fns";
+import React, { useContext, useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const DashboardHome = () => {
+  const { user } = useContext(AuthContext);
+  const date = new Date();
+  const [value, setValue] = useState(date);
 
-    const {user} = useContext(AuthContext)
-    const date = new Date()
-    const [value, setValue] = useState(date);
+  useEffect(() => {
+    const interval = setInterval(() => setValue(new Date()), 1000);
 
-    useEffect(() => {
-      const interval = setInterval(() => setValue(new Date()), 1000);
-  
-      return () => {
-        clearInterval(interval);
-      };
-    }, []);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
-    return (
-        <div className='space-y-5 pl-5'>
-            <Helmet>
-        <title>Dashboard - Biker Point</title>
+  return (
+    <div className="space-y-5 pl-5">
+      <Helmet>
+        <title>Dashboard - Music School</title>
       </Helmet>
-            <div className='flex justify-between items-end border-b-4 t border-black py-2'>
-                <div>
-                <h2 className='text-red-600 text-lg md:text-2xl uppercase font-bold'>
-                    {format(date,'cccc')}
-                </h2>
-                <h2 className='text-slate-900 text-xl md:text-3xl uppercase font-bold'>
-                    {format(date,'PP')}
-                </h2>
-                </div>
-                <div >
-             
-                <h2 className='text-red-600 text-xl md:text-3xl uppercase font-bold'>
-                    {format(value,'pp')}
-                </h2>
-                </div>
-                
-            </div>
-             <h2 className='text-3xl md:text-5xl lg:text-6xl font-bold uppercase'>
-                        <span className='text-red-600 '>Welcome </span>{user.displayName.split(' ')[0]}
-                        </h2>
+      <div className="flex justify-between items-end border-b-4 t border-black py-2">
+        <div>
+          <h2 className="text-[#C25934] text-lg md:text-2xl uppercase font-bold">
+            {format(date, "cccc")}
+          </h2>
+          <h2 className="text-slate-900 text-xl md:text-3xl uppercase font-bold">
+            {format(date, "PP")}
+          </h2>
         </div>
-    );
+        <div>
+          <h2 className="text-[#C25934] text-xl md:text-3xl uppercase font-bold">
+            {format(value, "pp")}
+          </h2>
+        </div>
+      </div>
+      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold uppercase">
+        <span className="text-[#C25934] ">Welcome </span>
+        {user.displayName.split(" ")[0]}
+      </h2>
+    </div>
+  );
 };
 
 export default DashboardHome;

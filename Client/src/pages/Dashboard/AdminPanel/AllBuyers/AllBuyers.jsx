@@ -29,7 +29,7 @@ const AllBuyers = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8 py-8">
       <Helmet>
-        <title>All Buyers - Biker Point</title>
+        <title>All Buyers - Music School</title>
       </Helmet>
 
       {users?.length === 0 && (

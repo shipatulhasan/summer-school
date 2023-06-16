@@ -18,7 +18,7 @@ const ProductsCard = ({ product, handleReport }) => {
   } = product;
 
   const [show, setShow] = useState(false);
-  const [imgLoading,setImgLoading] = useState(false)
+  const [imgLoading, setImgLoading] = useState(false);
 
   const post_time = formatDistanceToNowStrict(new Date(post_date), {
     addSuffix: true,
@@ -29,9 +29,11 @@ const ProductsCard = ({ product, handleReport }) => {
     <div className="grid gap-10 lg:grid-cols-2 items-center border border-slate-200 shadow-lg shadow-slate-200 p-5">
       <div>
         <img
-          className={`${!imgLoading?'blur-md':'blur-none'}object-contain w-full h-56 rounded sm:h-96`}
+          className={`${
+            !imgLoading ? "blur-md" : "blur-none"
+          }object-contain w-full h-56 rounded sm:h-96`}
           src={product?.image}
-          onLoad={()=>setImgLoading(true)}
+          onLoad={() => setImgLoading(true)}
           alt=""
         />
       </div>
@@ -87,7 +89,7 @@ const ProductsCard = ({ product, handleReport }) => {
           <p className=" font-bold">Seller information</p>
           <div className="flex items-center py-3 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 ">
             <img
-              className="flex-shrink-0 ring-2 border-2 ring-red-600 object-cover mx-1 rounded-full w-12 h-12"
+              className="flex-shrink-0 ring-2 border-2 ring-[#C25934] object-cover mx-1 rounded-full w-12 h-12"
               src={seller?.thumbnail}
               alt="img"
             />
@@ -104,22 +106,19 @@ const ProductsCard = ({ product, handleReport }) => {
           <div className="my-4 space-y-4 md:space-y-0 md:flex items-center justify-between">
             <button
               onClick={() => setShow(!show)}
-              className="px-6 py-2 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-red-500 hover:bg-red-600 focus:shadow-outline focus:outline-none capitalize hover:cursor-pointer"
+              className="px-6 py-2 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-[#EFCF4F] hover:bg-[#C25934] focus:shadow-outline focus:outline-none capitalize hover:cursor-pointer"
             >
               Book now
             </button>
-            {
-              !product?.reported && 
+            {!product?.reported && (
               <button
                 onClick={() => handleReport(product)}
                 className="text-red-700 bg-red-200 rounded px-3 py-1 hover:cursor-pointer flex items-center gap-2 font-bold"
               >
-              
-                    <MdReportGmailerrorred className="font-bold" />
-                    Report product
-           
+                <MdReportGmailerrorred className="font-bold" />
+                Report product
               </button>
-            }
+            )}
 
             {show && (
               <BookingModal show={show} setShow={setShow} product={product} />

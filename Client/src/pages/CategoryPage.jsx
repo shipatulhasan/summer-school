@@ -11,7 +11,7 @@ const CategoryPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Categories - Biker Point</title>
+        <title>Categories - Music School</title>
       </Helmet>
       <PageHeader headerInfo={{ img, title: "Choose your own preference" }} />
 

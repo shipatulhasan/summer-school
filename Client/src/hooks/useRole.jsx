@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
 
 export const useRole = (email) => {
   const { logOut } = useContext(AuthContext);

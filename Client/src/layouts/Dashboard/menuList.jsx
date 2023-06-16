@@ -9,8 +9,8 @@ export const studentMenu = (
     {({ isActive }) => (
       <li
         className={`${
-          isActive ? "bg-red-500 text-white" : "text-black"
-        } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
+          isActive ? "bg-[#EFCF4F] text-white" : "text-[#C25934]"
+        } w-full hover:bg-[#EFCF4F] hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
       >
         <div className="flex gap-2 items-center">
           <AiOutlineShoppingCart className="" />
@@ -27,8 +27,8 @@ export const instructorMenu = (
       {({ isActive }) => (
         <li
           className={`${
-            isActive ? "bg-red-500 text-white" : "text-black"
-          } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
+            isActive ? "bg-[#EFCF4F] text-white" : "text-[#C25934]"
+          } w-full hover:bg-[#EFCF4F] hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
         >
           <div className="flex gap-2 items-center">
             <BsFillCloudPlusFill className="" />
@@ -41,8 +41,8 @@ export const instructorMenu = (
       {({ isActive }) => (
         <li
           className={`${
-            isActive ? "bg-red-500 text-white" : "text-black"
-          } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
+            isActive ? "bg-[#EFCF4F] text-white" : "text-[#C25934]"
+          } w-full hover:bg-[#EFCF4F] hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
         >
           <div className="flex gap-2 items-center">
             <AiOutlineShoppingCart className="" />
@@ -55,8 +55,8 @@ export const instructorMenu = (
       {({ isActive }) => (
         <li
           className={`${
-            isActive ? "bg-red-500 text-white" : "text-black"
-          } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
+            isActive ? "bg-[#EFCF4F] text-white" : "text-[#C25934]"
+          } w-full hover:bg-[#EFCF4F] hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
         >
           <div className="flex gap-2 items-center">
             <HiUserGroup className="" />
@@ -69,44 +69,30 @@ export const instructorMenu = (
 );
 export const adminMenu = (
   <>
-    <NavLink to="/dashboard/all-buyers">
+    <NavLink to="/dashboard/manage-users">
       {({ isActive }) => (
         <li
           className={`${
-            isActive ? "bg-red-500 text-white" : "text-black"
-          } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
+            isActive ? "bg-[#EFCF4F] text-white" : "text-[#C25934]"
+          } w-full hover:bg-[#EFCF4F] hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
         >
           <div className="flex gap-2 items-center">
             <HiUserGroup className="" />
-            <span className="">All buyers</span>
+            <span className="">All users</span>
           </div>
         </li>
       )}
     </NavLink>
-    <NavLink to="/dashboard/all-sellers">
+    <NavLink to="/dashboard/manage-classes">
       {({ isActive }) => (
         <li
           className={`${
-            isActive ? "bg-red-500 text-white" : "text-black"
-          } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
+            isActive ? "bg-[#EFCF4F] text-white" : "text-[#C25934]"
+          } w-full hover:bg-[#EFCF4F] hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
         >
           <div className="flex gap-2 items-center">
             <HiUserGroup className="" />
-            <span className="">All sellers</span>
-          </div>
-        </li>
-      )}
-    </NavLink>
-    <NavLink to="/dashboard/reported-items">
-      {({ isActive }) => (
-        <li
-          className={`${
-            isActive ? "bg-red-500 text-white" : "text-black"
-          } w-full hover:bg-red-500 hover:text-white px-2 py-1 rounded transition-colors duration-150 ease-linear font-semibold list-none mb-2 capitalize`}
-        >
-          <div className="flex gap-2 items-center">
-            <MdReportGmailerrorred className="" />
-            <span className="">Reported Products</span>
+            <span className="">Manage Classes</span>
           </div>
         </li>
       )}

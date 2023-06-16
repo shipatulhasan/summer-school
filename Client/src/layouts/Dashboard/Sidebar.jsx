@@ -37,13 +37,13 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div className="w-64 hidden bg-slate-50 shadow h-full md:flex  flex-col justify-between fixed">
+      <div className="w-64 hidden bg-[#0C0C0C] shadow h-full md:flex  flex-col justify-between fixed">
         <div className="px-8 my-5">
           <Link to="/" className="w-2/3 mx-auto hover:cursor-pointer">
             <img src={brand} alt="" />
           </Link>
           <Link to="/dashboard" className="flex items-center gap-0 mt-2">
-            <div className="w-11 h-11 overflow-hidden border-2 ring-red-600 ring-2 m-1 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-11 h-11 overflow-hidden border-2 ring-[#EFCF4F] ring-2 m-1 rounded-full flex items-center justify-center flex-shrink-0">
               {!user?.photoURL ? (
                 <FaUser className="text-white text-xl" />
               ) : (
@@ -56,14 +56,14 @@ const Sidebar = () => {
             </div>
             <div className="ml-2">
               <div className="flex items-center">
-                <h1 className="text-base font-semibold text-black dark:text-gray-200">
+                <h1 className="text-base font-semibold text-gray-200">
                   {user?.displayName}
                 </h1>
                 {verification && (
                   <MdVerified className="text-blue-700 text-lg" />
                 )}
               </div>
-              <p className="text-xs text-black dark:text-gray-400 leading-none">
+              <p className="text-xs text-gray-400 leading-none">
                 {user?.email}
               </p>
             </div>
@@ -74,13 +74,13 @@ const Sidebar = () => {
         <div>
           <div className="my-3">
             <ul className="px-8 mt-10 w-full flex items-center justify-start gap-10">
-              <li className="cursor-pointer text-red-600 pt-5 pb-3">
+              <li className="cursor-pointer text-[#EFCF4F] pt-5 pb-3">
                 <FaFacebookF />
               </li>
-              <li className="cursor-pointer text-red-600 pt-5 pb-3">
+              <li className="cursor-pointer text-[#EFCF4F] pt-5 pb-3">
                 <FaWhatsapp />
               </li>
-              <li className="cursor-pointer text-red-600 pt-5 pb-3">
+              <li className="cursor-pointer text-[#EFCF4F] pt-5 pb-3">
                 <FaLinkedinIn />
               </li>
             </ul>
@@ -88,7 +88,7 @@ const Sidebar = () => {
 
           <p
             onClick={handleLogOut}
-            className="flex items-center p-3 text-sm text-white capitalize transition-colors duration-300 hover:cursor-pointer transform bg-red-600"
+            className="flex items-center p-3 text-sm text-white capitalize transition-colors duration-300 hover:cursor-pointer transform bg-[#EFCF4F]"
           >
             <svg
               className="w-5 h-5 mx-1"
@@ -115,7 +115,7 @@ const Sidebar = () => {
         id="mobile-nav"
       >
         <div
-          className="h-10 w-10 bg-red-600 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer"
+          className="h-10 w-10 bg-[#C25934] absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer"
           id="mobile-toggler"
           onClick={() => setShow(!show)}
         >
@@ -148,7 +148,7 @@ const Sidebar = () => {
             <img src={brand} alt="" />
           </Link>
           <div className="flex items-center gap-0 mt-2">
-            <div className="w-12 h-12 overflow-hidden border-2 ring-red-600 ring-2 m-1 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 overflow-hidden border-2 ring-[#C25934] ring-2 m-1 rounded-full flex items-center justify-center">
               {isLoading ? (
                 <FaUser className="text-white text-xl" />
               ) : (
@@ -174,13 +174,13 @@ const Sidebar = () => {
         <div>
           <div className="my-3">
             <ul className="px-8 mt-10 w-full flex items-center justify-start gap-10">
-              <li className="cursor-pointer text-red-600 pt-5 pb-3">
+              <li className="cursor-pointer text-[#C25934] pt-5 pb-3">
                 <FaFacebookF />
               </li>
-              <li className="cursor-pointer text-red-600 pt-5 pb-3">
+              <li className="cursor-pointer text-[#C25934] pt-5 pb-3">
                 <FaWhatsapp />
               </li>
-              <li className="cursor-pointer text-red-600 pt-5 pb-3">
+              <li className="cursor-pointer text-[#C25934] pt-5 pb-3">
                 <FaLinkedinIn />
               </li>
             </ul>
@@ -188,7 +188,7 @@ const Sidebar = () => {
 
           <p
             onClick={handleLogOut}
-            className="flex items-center p-3 text-sm text-white capitalize transition-colors duration-300 hover:cursor-pointer transform bg-red-600"
+            className="flex items-center p-3 text-sm text-white capitalize transition-colors duration-300 hover:cursor-pointer transform bg-[#C25934]"
           >
             <svg
               className="w-5 h-5 mx-1"

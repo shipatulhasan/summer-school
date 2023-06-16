@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { GoComment } from "react-icons/go";
-import {FaFacebookF,FaTwitter,FaLinkedinIn} from 'react-icons/fa'
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 const SingleBlog = ({ blog, index }) => {
   const { img, title, category, date, comments, details } = blog;
@@ -17,7 +17,7 @@ const SingleBlog = ({ blog, index }) => {
               <h5 className=" font-Bellefair font-normal text-2xl leading-tight sm:text-4xl">
                 {title}
               </h5>
-              <div className=" bg-red-500 bg-opacity-50 absolute top-0 -left-10 w-24 h-16 md:h-20 -z-10" />
+              <div className=" bg-[#EFCF4F] bg-opacity-50 absolute top-0 -left-10 w-24 h-16 md:h-20 -z-10" />
             </div>
             <div className="py-3">
               <p className="flex items-center gap-4">
@@ -31,15 +31,20 @@ const SingleBlog = ({ blog, index }) => {
             <p className="mb-5 text-gray-800">{details}</p>
           </div>
           <div className="flex items-center gap-4 pt-2">
-           <div className="h-9 w-9 rounded-full bg-red-500  bg-opacity-50 grid place-content-center "><FaFacebookF /></div> 
-           <div className="h-9 w-9 rounded-full bg-red-500  bg-opacity-50 grid place-content-center "><FaTwitter /></div> 
-           <div className="h-9 w-9 rounded-full bg-red-500  bg-opacity-50 grid place-content-center "><FaLinkedinIn /></div> 
+            <div className="h-9 w-9 rounded-full bg-[#EFCF4F]  bg-opacity-50 grid place-content-center ">
+              <FaFacebookF />
+            </div>
+            <div className="h-9 w-9 rounded-full bg-[#EFCF4F]  bg-opacity-50 grid place-content-center ">
+              <FaTwitter />
+            </div>
+            <div className="h-9 w-9 rounded-full bg-[#EFCF4F]  bg-opacity-50 grid place-content-center ">
+              <FaLinkedinIn />
+            </div>
           </div>
         </div>
-        {
-            !index &&
-        <div className="my-10 lg:ml-10 w-full h-[1px] bg-red-500" />
-        }
+        {!index && (
+          <div className="my-10 lg:ml-10 w-full h-[1px] bg-[#EFCF4F]" />
+        )}
       </div>
     </div>
   );

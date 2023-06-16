@@ -100,7 +100,7 @@ const Login = () => {
               to="/registration"
               role="link"
               aria-label="Sign up here"
-              className="text-base font-medium leading-none underline text-red-600 cursor-pointer"
+              className="text-base font-medium leading-none underline text-[#C25934] cursor-pointer"
             >
               {" "}
               Sign up here
@@ -108,7 +108,7 @@ const Login = () => {
           </p>
           <div className=" mt-5 ">
             <button
-              className="flex items-center gap-5 border-2 rounded border-red-500 px-2 py-1"
+              className="flex items-center gap-5 border-2 rounded border-[#EFCF4F] px-2 py-1"
               onClick={handleSignInWithGoogle}
               aria-label="Continue with google"
             >
@@ -148,7 +148,7 @@ const Login = () => {
             <hr className="w-full border-gray-800  " />
           </div>
           <form action="" onSubmit={handleLogin}>
-            <p className="text-base font-medium mb-5 text-red-600">{error}</p>
+            <p className="text-base font-medium mb-5 text-[#C25934]">{error}</p>
             <div>
               <label className="text-base font-medium leading-none text-gray-800">
                 Email
@@ -183,7 +183,7 @@ const Login = () => {
             <div className="mt-6">
               <button
                 aria-label="create my account"
-                className="focus:ring-2 focus:ring-offset-2 focus:ring-slate-100 text-base font-semibold leading-none text-white focus:outline-none bg-red-500 border rounded hover:bg-red-600 py-4 w-full"
+                className="focus:ring-2 focus:ring-offset-2 focus:ring-slate-100 text-base font-semibold leading-none text-white focus:outline-none bg-[#EFCF4F] border rounded hover:bg-[#C25934] py-4 w-full"
                 type="submit"
               >
                 {isLoading ? <LoderText disabled /> : "Login"}
@@ -194,7 +194,7 @@ const Login = () => {
           <Link
             to="/reset-password"
             role="link"
-            className=" text-base font-medium leading-none underline text-red-600 cursor-pointer"
+            className=" text-base font-medium leading-none underline text-[#C25934] cursor-pointer"
           >
             <p className="mt-4">Forget Password</p>
           </Link>

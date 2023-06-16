@@ -99,7 +99,7 @@ const Navbar = () => {
               <button
                 onClick={() => setOpen(!isOpen)}
                 type="button"
-                className="text-red-400 text-xl dark:text-gray-200 hover:text-red-600 dark:hover:text-gray-400 focus:outline-none focus:text-red-600 dark:focus:text-slate-200"
+                className="text-red-400 text-xl dark:text-gray-200 hover:text-[#C25934] dark:hover:text-gray-400 focus:outline-none focus:text-[#C25934] dark:focus:text-slate-200"
                 aria-label="toggle menu"
               >
                 {!isOpen ? (

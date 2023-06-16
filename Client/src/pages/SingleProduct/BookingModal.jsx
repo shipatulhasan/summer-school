@@ -131,7 +131,7 @@ const BookingModal = ({ show, setShow, product }) => {
 
               <div className="mt-6 flex items-center w-full">
                 <button
-                  className="focus:ring-2 focus:ring-offset-2 focus:ring-slate-100 text-base font-semibold leading-none text-white focus:outline-none bg-red-500 border rounded hover:bg-red-600 py-2 px-8"
+                  className="focus:ring-2 focus:ring-offset-2 focus:ring-slate-100 text-base font-semibold leading-none text-white focus:outline-none bg-[#EFCF4F] border rounded hover:bg-[#C25934] py-2 px-8"
                   type="submit"
                 >
                   {isLoading ? <LoderText /> : "Booking"}

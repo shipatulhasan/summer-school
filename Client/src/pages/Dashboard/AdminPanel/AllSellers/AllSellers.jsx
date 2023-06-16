@@ -54,7 +54,7 @@ const AllSellers = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8 py-8">
       <Helmet>
-        <title>All Sellers - Biker Point</title>
+        <title>All Sellers - Music School</title>
       </Helmet>
       {users?.length === 0 && (
         <p className="text-black text-2xl font-bold">

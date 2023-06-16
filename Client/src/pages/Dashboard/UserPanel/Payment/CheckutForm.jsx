@@ -129,7 +129,7 @@ const CheckoutForm = ({ booking }) => {
       />
 
       {cardError && (
-        <h2 className="mt-4 text-red-500">
+        <h2 className="mt-4 text-[#EFCF4F]">
           {cardError} please{" "}
           <Link
             to="/dashboard/my-orders"
@@ -142,7 +142,7 @@ const CheckoutForm = ({ booking }) => {
       )}
 
       <button
-        className="bg-red-500 border rounded hover:bg-red-600 mt-8 w-full py-2 text-white font-bold "
+        className="bg-[#EFCF4F] border rounded hover:bg-[#C25934] mt-8 w-full py-2 text-white font-bold "
         type="submit"
         disabled={!stripe || !clientSecret || proccessing}
       >

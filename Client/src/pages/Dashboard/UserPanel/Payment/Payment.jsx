@@ -30,7 +30,7 @@ const Payment = () => {
   return (
     <div className="flex h-full min-h-[80vh] items-center justify-center">
       <Helmet>
-        <title>Checkout - Biker Point</title>
+        <title>Checkout - Music School</title>
       </Helmet>
       <div className="grid gap-10 lg:grid-cols-2 items-center border border-slate-200 shadow-lg shadow-slate-200 p-5">
         <div>
@@ -42,7 +42,7 @@ const Payment = () => {
         </div>
 
         <div className="space-y-5 ">
-          <h1 className="text-5xl font-bold text-red-600 leading-snug sm:pr-8">
+          <h1 className="text-5xl font-bold text-[#C25934] leading-snug sm:pr-8">
             Checkout
           </h1>
           <div>

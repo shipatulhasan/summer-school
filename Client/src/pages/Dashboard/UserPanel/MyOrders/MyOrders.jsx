@@ -51,7 +51,7 @@ const MyOrders = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8 py-8">
       <Helmet>
-        <title>My order - Biker Point</title>
+        <title>My order - Music School</title>
       </Helmet>
 
       {isLoading ? (
@@ -61,7 +61,7 @@ const MyOrders = () => {
           {bookings?.length === 0 ? (
             <p className="text-black text-2xl font-bold">
               No booking booked yet. wanna booke some products ?{" "}
-              <Link to="/categories" className="text-red-600 font-semibold ">
+              <Link to="/categories" className="text-[#C25934] font-semibold ">
                 Click here
               </Link>
             </p>

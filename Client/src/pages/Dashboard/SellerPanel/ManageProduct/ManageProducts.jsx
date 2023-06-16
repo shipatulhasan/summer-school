@@ -79,7 +79,7 @@ const ManageProducts = () => {
   return (
     <div className="container mx-auto px-4 sm:px-8 py-8">
       <Helmet>
-        <title>Manage Product - Biker Point</title>
+        <title>Manage Product - Music School</title>
       </Helmet>
 
       <div className="px-4  py-4 overflow-x-auto">
@@ -88,7 +88,7 @@ const ManageProducts = () => {
             No product added yet. wanna add new product?{" "}
             <Link
               to="/dashboard/add-product"
-              className="text-red-600 font-semibold "
+              className="text-[#C25934] font-semibold "
             >
               Click here
             </Link>

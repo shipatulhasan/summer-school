@@ -1,51 +1,51 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import {  FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const UserProfile = () => {
-  
   const [isClicked, setIsClicked] = useState(false);
-  const {user,logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
-
-  const handleLogOut = ()=>{
+  const handleLogOut = () => {
     logOut()
-    .then(()=>{ 
-      toast.success('Successfully logout')
-    })
-    .catch(err=>console.error(err.message))
-  }
-
+      .then(() => {
+        toast.success("Successfully logout");
+      })
+      .catch((err) => console.error(err.message));
+  };
 
   return (
     <div className="relative ">
       {/* <!-- Dropdown toggle button --> */}
-      <button 
-      onClick={() => setIsClicked(!isClicked)}
-      className="flex items-center focus:outline-none"
+      <button
+        onClick={() => setIsClicked(!isClicked)}
+        className="flex items-center focus:outline-none"
       >
-         <div className="w-12 h-12 overflow-hidden border-2 ring-red-600 ring-2 m-1 rounded-full flex items-center justify-center">
-           {
-             !user?.photoURL ? <FaUser className="text-white text-xl"/>:<img src={user?.photoURL} className="object-cover w-full h-full" alt="avatar" />
-           }
-           
-          </div>
+        <div className="w-12 h-12 overflow-hidden border-2 ring-[#EFCF4F] ring-2 m-1 rounded-full flex items-center justify-center">
+          {!user?.photoURL ? (
+            <FaUser className="text-white text-xl" />
+          ) : (
+            <img
+              src={user?.photoURL}
+              className="object-cover w-full h-full"
+              alt="avatar"
+            />
+          )}
+        </div>
       </button>
 
       {/* <!-- Dropdown menu --> */}
       {isClicked && (
-        <div
-          className="absolute left-0 lg:left-auto lg:right-0 z-20 w-60 py-2 mt-2 overflow-hidden bg-white rounded-md shadow-xl dark:bg-gray-800"
-        >
+        <div className="absolute left-0 lg:left-auto lg:right-0 z-20 w-60 py-2 mt-2 overflow-hidden bg-white rounded-md shadow-xl dark:bg-gray-800">
           <Link
             to="/"
             className="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <img
-              className="flex-shrink-0 ring-2 border-2 ring-red-600 object-cover mx-1 rounded-full w-9 h-9"
+              className="flex-shrink-0 ring-2 border-2 ring-[#EFCF4F] object-cover mx-1 rounded-full w-9 h-9"
               src={user?.photoURL}
               alt="img"
             />
@@ -54,7 +54,7 @@ const UserProfile = () => {
                 {user?.displayName}
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400 leading-none">
-               {user?.email}
+                {user?.email}
               </p>
             </div>
           </Link>
@@ -62,10 +62,10 @@ const UserProfile = () => {
           <hr className="border-gray-200 dark:border-gray-700 " />
 
           <Link
-            to="/Dashboard"
+            to="/dashboard"
             className="flex items-center p-3 gap-2 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
           >
-          <MdOutlineDashboardCustomize className="text-lg mx-1" />
+            <MdOutlineDashboardCustomize className="text-lg mx-1" />
 
             <span className="mx-1">Dashboard</span>
           </Link>
@@ -92,10 +92,10 @@ const UserProfile = () => {
             <span className="mx-1">view profile</span>
           </Link>
 
-
           <hr className="border-gray-200 dark:border-gray-700 " />
 
-          <p onClick={handleLogOut}
+          <p
+            onClick={handleLogOut}
             className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 hover:cursor-pointer transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <svg

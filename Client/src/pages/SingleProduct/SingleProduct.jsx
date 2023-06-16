@@ -50,7 +50,7 @@ const SingleProduct = () => {
   return (
     <div>
       <Helmet>
-        <title>{state?.name ? state?.name : "category"} - Biker Point</title>
+        <title>{state?.name ? state?.name : "category"} - Music School</title>
       </Helmet>
       <PageHeader headerInfo={{ img: state?.img, title: state?.name }} />
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-8 lg:py-20">
