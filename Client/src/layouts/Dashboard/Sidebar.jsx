@@ -88,7 +88,7 @@ const Sidebar = () => {
 
           <p
             onClick={handleLogOut}
-            className="flex items-center p-3 text-sm text-white capitalize transition-colors duration-300 hover:cursor-pointer transform bg-[#EFCF4F]"
+            className="flex items-center p-3 text-sm text-white capitalize transition-colors duration-300 hover:cursor-pointer transform bg-[#C25934]"
           >
             <svg
               className="w-5 h-5 mx-1"
