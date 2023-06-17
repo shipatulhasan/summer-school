@@ -95,10 +95,14 @@ const SingleClass = () => {
                       src={myClass?.instructor?.thumbnail}
                       alt='img'
                     />
-                    <div className='ml-2 flex items-center'>
+                    <div className='ml-2'>
                       <h1 className='text-base capitalize font-bold text-black dark:text-gray-200'>
                         {myClass?.instructor?.name}
                       </h1>
+                      <p className='text-sm font-semibold'>
+                        {' '}
+                        {myClass?.instructor?.email}
+                      </p>
                     </div>
                   </div>
 
