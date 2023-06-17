@@ -26,7 +26,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className='py-16 lg:py-20'>
+      <div className='pb-5'>
         <InstructorSection />
         <div className='text-center'>
           <Link
