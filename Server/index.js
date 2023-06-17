@@ -38,13 +38,7 @@ const verifyJWT = (req, res, next) => {
 
 const run = async () => {
   const usersCollection = client.db('musicSchoolDB').collection('users')
-  const productsCollection = client.db('musicSchoolDB').collection('products')
   const classesCollection = client.db('musicSchoolDB').collection('classes')
-  const bookingsCollection = client.db('musicSchoolDB').collection('bookings')
-  const advertiseCollection = client
-    .db('musicSchoolDB')
-    .collection('addvertise')
-  const paymentsCollection = client.db('musicSchoolDB').collection('payments')
 
   try {
     // verification
@@ -67,55 +61,6 @@ const run = async () => {
       }
       next()
     }
-
-    // payment
-
-    app.post('/create-payment-intent', async (req, res) => {
-      const booking = req.body
-      const price = booking.price
-      const amount = price * 100
-      const paymentIntent = await stripe.paymentIntents.create({
-        currency: 'usd',
-        amount: amount,
-        payment_method_types: ['card']
-      })
-      res.send({
-        clientSecret: paymentIntent.client_secret
-      })
-    })
-
-    // store payments in database
-
-    app.post('/payments', verifyJWT, async (req, res) => {
-      const payment = req.body
-      const result = await paymentsCollection.insertOne(payment)
-      const query = { productId: payment.productId }
-      const adDelete = await advertiseCollection.deleteOne(query)
-      const filter = { _id: ObjectId(payment.productId) }
-      const updatedProductDoc = {
-        $set: {
-          status: 'sold',
-          advertise: false
-        }
-      }
-      const updateProduct = await productsCollection.updateOne(
-        filter,
-        updatedProductDoc
-      )
-      const bookingfilter = { _id: ObjectId(payment.bookingId) }
-      const updatedBookingDoc = {
-        $set: {
-          paid: true,
-          transactionId: payment.transactionID
-        }
-      }
-      const updateBooking = await bookingsCollection.updateOne(
-        bookingfilter,
-        updatedBookingDoc
-      )
-
-      res.send(result)
-    })
 
     // user api
     app.put('/user/:email', async (req, res) => {
@@ -156,64 +101,6 @@ const run = async () => {
       }
       const filter = { email: email }
       const result = await usersCollection.findOne(filter)
-      res.send(result)
-    })
-
-    // open routes
-
-    // open routes close
-
-    // users route
-
-    // booking
-
-    app.post('/booking', verifyJWT, async (req, res) => {
-      const bookingInfo = req.body
-
-      const filter = {
-        email: bookingInfo.email,
-        productId: bookingInfo.productId
-      }
-      const alreadyBooked = await bookingsCollection.find(filter).toArray()
-      if (alreadyBooked.length) {
-        const message = 'you have already booked this product'
-        return res.send({ acknowledged: false, message })
-      }
-      const result = await bookingsCollection.insertOne(bookingInfo)
-      res.send(result)
-    })
-
-    app.get('/booking', verifyJWT, async (req, res) => {
-      const email = req.query.email
-
-      const decodedEmail = req.decoded.email
-
-      if (email !== decodedEmail) {
-        return res.status(403).send({ message: 'forbidden' })
-      }
-
-      const query = { email: email }
-
-      const result = await bookingsCollection.find(query).toArray()
-
-      res.send(result)
-    })
-    app.get('/booking/:id', async (req, res) => {
-      const id = req.params.id
-
-      const query = { _id: ObjectId(id) }
-
-      const result = await bookingsCollection.findOne(query)
-
-      res.send(result)
-    })
-
-    // delete booking
-
-    app.delete('/booking/:id', verifyJWT, async (req, res) => {
-      const id = req.params.id
-      const filter = { _id: ObjectId(id) }
-      const result = await bookingsCollection.deleteOne(filter)
       res.send(result)
     })
 

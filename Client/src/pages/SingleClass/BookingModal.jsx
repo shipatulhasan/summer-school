@@ -16,8 +16,8 @@ const BookingModal = ({ show, setShow, myClass }) => {
     const address = form.address.value
 
     const bookingInfo = {
-      product_title: title,
-      productId: _id,
+      className: title,
+      classId: _id,
       price: price,
       name,
       email,
@@ -27,27 +27,11 @@ const BookingModal = ({ show, setShow, myClass }) => {
     }
 
     setIsloading(true)
-    fetch(`${import.meta.env.VITE_APP_api}/booking`, {
-      method: 'post',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('music-school-token')}`
-      },
-      body: JSON.stringify(bookingInfo)
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          console.log(data)
-          toast.success('successfully booked')
-          setIsloading(false)
-          setShow(false)
-        } else {
-          toast.error(data.message)
-          setIsloading(false)
-          setShow(false)
-        }
-      })
+    setTimeout(() => {
+      toast.success('successfully booked')
+      setIsloading(false)
+      setShow(false)
+    }, 2000)
   }
 
   return (

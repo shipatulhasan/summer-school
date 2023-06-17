@@ -32,26 +32,6 @@ const MyClasses = () => {
     }
   })
 
-  // const handleDelete = (product) => {
-  //   const confirmDelete = window.confirm(
-  //     `would you like to delete ${product?.title}`
-  //   )
-  //   if (confirmDelete) {
-  //     fetch(`${import.meta.env.VITE_APP_api}/product/${product?._id}`, {
-  //       method: 'delete',
-  //       headers: {
-  //         authorization: `Bearer ${localStorage.getItem('music-school-token')}`
-  //       }
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         toast.success('product deleted successfully')
-  //         refetch()
-  //         console.log(data)
-  //       })
-  //   }
-  // }
-
   return (
     <div className='container mx-auto px-4 sm:px-8 py-8'>
       <Helmet>

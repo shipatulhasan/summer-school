@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader'
 import { useLocation, useParams } from 'react-router-dom'
-import CategorySidebar from './CategorySidebar'
 import { useQuery } from '@tanstack/react-query'
 import { Helmet } from 'react-helmet-async'
 import { useClasses } from '../../hooks/useClasses'
 import SingleClassLoading from './SingleClassLoading'
 import BookingModal from './BookingModal'
+import ClassesSidebar from './ClassesSidebar'
 
 const SingleClass = () => {
   const [classes, catLoading] = useClasses()
@@ -45,7 +45,7 @@ const SingleClass = () => {
           <div className='bg-white border border-slate-200 shadow-lg shadow-slate-300 '>
             <h2 className='text-2xl font-semibold p-5 '>Other classes</h2>
             {classes.map((cat, i) => (
-              <CategorySidebar
+              <ClassesSidebar
                 key={cat._id}
                 cat={cat}
                 lastItem={i === classes.length - 1}

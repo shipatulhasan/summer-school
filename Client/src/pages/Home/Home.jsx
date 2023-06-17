@@ -1,13 +1,11 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import BlogSection from '../shared/BlogSection/BlogSection'
-import LoadingProduct from './LoadingProduct'
+import ClassSection from '../shared/ClassSection/classSection'
+import InstructorSection from '../shared/InstructorSection/InstructorSection'
 import NewsLetter from './NewLetter/NewsLetter'
 import Slider from './Slider/Slider'
-import InstructorSection from '../shared/InstructorSection/InstructorSection'
-import ClassSection from '../shared/ClassSection/ClassSection'
 
 const Home = () => {
   return (
