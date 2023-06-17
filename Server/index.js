@@ -273,6 +273,27 @@ const run = async () => {
       const result = await usersCollection.updateOne(query, updateDoc, options)
       res.send(result)
     })
+    app.get('/all-classes', verifyJWT, verifyAdmin, async (req, res) => {
+      const result = await classesCollection.find({}).toArray()
+      res.send(result)
+    })
+    app.put('/update-class/:id', verifyJWT, verifyAdmin, async (req, res) => {
+      const id = req.params.id
+      const data = req.body
+      const query = { _id: ObjectId(id) }
+      const options = { upsert: true }
+      const updateDoc = {
+        $set: {
+          status: data?.status
+        }
+      }
+      const result = await classesCollection.updateOne(
+        query,
+        updateDoc,
+        options
+      )
+      res.send(result)
+    })
   } finally {
   }
 }
