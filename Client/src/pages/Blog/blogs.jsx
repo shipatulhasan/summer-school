@@ -6,7 +6,7 @@ export const blogs = [
   {
     img: img1,
     title: 'We love children and teach them music',
-    category: 'Guitar',
+    category: 'Music',
     date: 'novembar 24, 2022',
     comments: 2,
     details: `Are you dreaming of becoming a musician? Look no further! At our music school, we have a genuine passion for teaching and a firm belief that anyone can become a musician with dedication and guidance. We welcome individuals of all ages and backgrounds who share a love for music and a desire to learn. Whether you're starting from scratch or have some musical experience, we are here to support you on your musical journey.
@@ -24,7 +24,7 @@ export const blogs = [
   {
     img: img2,
     title: 'We teach everyone who wants to become a musician',
-    category: 'Dealership',
+    category: 'School',
     date: 'novembar 24, 2022',
     comments: 3,
     details: `At our music school, we welcome everyone who wants to become a musician. It doesn't matter if you're a beginner or have some experience, we're here to help you along your musical journey. We offer a variety of programs tailored to different instruments, genres, and styles, ensuring there's something for everyone. Our team of dedicated instructors is passionate about sharing their love for music and guiding aspiring musicians. We provide a supportive and inclusive learning environment where you can freely express your creativity and develop your skills. Our curriculum covers music theory, technique, performance, and appreciation. We understand that everyone learns at their own pace, so our instructors adapt their teaching methods to meet your individual needs. Whether you're aiming for a professional career or simply want to enjoy playing as a hobby, we have the resources to support your goals. We offer flexible scheduling options to accommodate busy lives. Our music school is equipped with top-notch facilities and instruments. We believe in fostering a sense of community, providing opportunities for students to connect and collaborate. Through performances and recitals, we encourage you to showcase your talent and gain valuable stage experience. Our track record shows many students achieving their musical aspirations and pursuing fulfilling careers. No matter your preferred genre, we're committed to nurturing your talent and helping you become the musician you want to be.`
