@@ -25,6 +25,7 @@ import MyClasses from '../pages/Dashboard/InstructionPanel/ManageProduct/MyClass
 import ClassPage from '../pages/ClassPage'
 import SingleClass from '../pages/SingleClass/SingleClass'
 import InstructorPage from '../pages/Instructor/InstructorPage'
+import SingleInstructor from '../pages/Instructor/SingleInstructor'
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/instructors',
         element: <InstructorPage />
+      },
+      {
+        path: '/instructor/:id',
+        element: <SingleInstructor />
       },
       {
         path: '/class/:id',

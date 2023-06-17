@@ -3,9 +3,11 @@ import { Helmet } from 'react-helmet-async'
 import image from '../../assets/banner/SLIDE2.jpg'
 import PageHeader from '../../components/PageHeader'
 import { useUserData } from '../../hooks/useUserData'
+import { useNavigate } from 'react-router-dom'
 
 const InstructorPage = () => {
   const { users, isLoading } = useUserData('instructor')
+  const navigate = useNavigate()
   return (
     <div>
       <Helmet>
@@ -18,6 +20,7 @@ const InstructorPage = () => {
             users?.map((user) => (
               <div
                 key={user._id}
+                onClick={() => navigate(`/instructor/${user?._id}`)}
                 className='flex flex-col items-center bg-slate-100 shadow-md rounded-sm max-w-[250px] py-5 hover:cursor-pointer'>
                 <img
                   className='object-cover w-20 h-20 md:h-36 md:w-36 mb-2 rounded-full shadow'

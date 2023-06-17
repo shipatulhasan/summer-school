@@ -6,8 +6,8 @@ import BlogSection from '../shared/BlogSection/BlogSection'
 import LoadingProduct from './LoadingProduct'
 import NewsLetter from './NewLetter/NewsLetter'
 import Slider from './Slider/Slider'
-import ClassSection from '../shared/ClassSection/classSection'
 import InstructorSection from '../shared/InstructorSection/InstructorSection'
+import ClassSection from '../shared/ClassSection/ClassSection'
 
 const Home = () => {
   return (
