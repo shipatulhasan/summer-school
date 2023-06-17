@@ -1,57 +1,66 @@
-import { createBrowserRouter } from "react-router-dom";
-import Dashboard from "../layouts/Dashboard/DashboardLayout";
-import Main from "../layouts/Main";
-import BlogPage from "../pages/Blog/BlogPage";
-import CategoryPage from "../pages/CategoryPage";
-import AllBuyers from "../pages/Dashboard/AdminPanel/AllBuyers/AllBuyers";
-import AllSellers from "../pages/Dashboard/AdminPanel/AllSellers/AllSellers";
-import ReportedProduct from "../pages/Dashboard/AdminPanel/ReportedProduct/ReportedProduct";
-import DashboardHome from "../pages/Dashboard/DashboardHome";
-import AddProduct from "../pages/Dashboard/SellerPanel/AddProduct";
-import ManageProducts from "../pages/Dashboard/SellerPanel/ManageProduct/ManageProducts";
-import MyOrders from "../pages/Dashboard/UserPanel/MyOrders/MyOrders";
-import Payment from "../pages/Dashboard/UserPanel/Payment/Payment";
-import ErrorPage from "../pages/ErrorPage";
-import Login from "../pages/Forms/Login";
-import Registration from "../pages/Forms/Registration";
-import Home from "../pages/Home/Home";
-import SingleProduct from "../pages/SingleProduct/SingleProduct";
-import PrivateRoute from "./PrivateRoute";
-import AdminRoute from "./AdminRoute";
-import SellerRoutes from "./SellerRoutes";
-import SingleProductLoading from "../pages/SingleProduct/SingleProductLoading";
+import { createBrowserRouter } from 'react-router-dom'
+import Dashboard from '../layouts/Dashboard/DashboardLayout'
+import Main from '../layouts/Main'
+import BlogPage from '../pages/Blog/BlogPage'
+import CategoryPage from '../pages/ClassPage'
+import AllSellers from '../pages/Dashboard/AdminPanel/AllSellers/AllSeller'
+import ReportedProduct from '../pages/Dashboard/AdminPanel/ReportedProduct/ReportedProduct'
+import DashboardHome from '../pages/Dashboard/DashboardHome'
+import AddProduct from '../pages/Dashboard/InstructionPanel/AddClass'
+import MyOrders from '../pages/Dashboard/UserPanel/MyOrders/MyOrders'
+import Payment from '../pages/Dashboard/UserPanel/Payment/Payment'
+import ErrorPage from '../pages/ErrorPage'
+import Login from '../pages/Forms/Login'
+import Registration from '../pages/Forms/Registration'
+import Home from '../pages/Home/Home'
+import SingleProduct from '../pages/SingleClass/SingleClass'
+import PrivateRoute from './PrivateRoute'
+import AdminRoute from './AdminRoute'
+import SellerRoutes from './InstructorRoutes'
+import SingleProductLoading from '../pages/SingleClass/SingleClassLoading'
+import AllUsers from '../pages/Dashboard/AdminPanel/AllUsers/AllUsers'
+import InstructorRoutes from './InstructorRoutes'
+import AddClass from '../pages/Dashboard/InstructionPanel/AddClass'
+import MyClasses from '../pages/Dashboard/InstructionPanel/ManageProduct/MyClasses'
+import ClassPage from '../pages/ClassPage'
+import SingleClass from '../pages/SingleClass/SingleClass'
+import InstructorPage from '../pages/Instructor/InstructorPage'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Main />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: '/',
+        element: <Home />
       },
       {
-        path: "/home",
-        element: <Home />,
+        path: '/home',
+        element: <Home />
       },
       {
-        path: "/blog",
-        element: <BlogPage />,
+        path: '/blog',
+        element: <BlogPage />
       },
       {
-        path: "/categories",
-        element: <CategoryPage />,
+        path: '/classes',
+        element: <ClassPage />
       },
       {
-        path: "/category/:id",
+        path: '/instructors',
+        element: <InstructorPage />
+      },
+      {
+        path: '/class/:id',
 
-        element: <SingleProductLoading />,
-      },
-    ],
+        element: <SingleClass />
+      }
+    ]
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: (
       <PrivateRoute>
         <Dashboard />
@@ -60,68 +69,60 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/dashboard",
-        element: <DashboardHome />,
+        path: '/dashboard',
+        element: <DashboardHome />
       },
       {
-        path: "/dashboard/my-orders",
-        element: <MyOrders />,
+        path: '/dashboard/my-orders',
+        element: <MyOrders />
       },
       {
-        path: "/dashboard/:id",
-        element: <Payment />,
+        path: '/dashboard/:id',
+        element: <Payment />
       },
 
       {
-        path: "/dashboard/add-product",
+        path: '/dashboard/add-class',
         element: (
-          <SellerRoutes>
-            <AddProduct />
-          </SellerRoutes>
-        ),
+          <InstructorRoutes>
+            <AddClass />
+          </InstructorRoutes>
+        )
       },
       {
-        path: "/dashboard/manage-products",
+        path: '/dashboard/my-class',
         element: (
-          <SellerRoutes>
-            <ManageProducts />
-          </SellerRoutes>
-        ),
+          <InstructorRoutes>
+            <MyClasses />
+          </InstructorRoutes>
+        )
       },
       {
-        path: "/dashboard/manage-users",
+        path: '/dashboard/manage-users',
         element: (
           <AdminRoute>
-            <AllBuyers />
+            <AllUsers />
           </AdminRoute>
-        ),
+        )
       },
       {
-        path: "/dashboard/manage-classes",
+        path: '/dashboard/manage-classes',
         element: (
           <AdminRoute>
             <AllSellers />
           </AdminRoute>
-        ),
-      },
-      {
-        path: "/dashboard/reported-items",
-        element: (
-          <AdminRoute>
-            <ReportedProduct />
-          </AdminRoute>
-        ),
-      },
-    ],
+        )
+      }
+    ]
   },
   {
-    path: "/registration",
-    element: <Registration />,
+    path: '/registration',
+    element: <Registration />
   },
   {
-    path: "/login",
-    element: <Login />,
-  },
-]);
+    path: '/login',
+    element: <Login />
+  }
+])
 
-export default router;
+export default router
